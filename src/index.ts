@@ -113,6 +113,7 @@ const server = new McpServer({
 server.registerTool(
     'generate_image',
     {
+        annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
         description: 'Generate an image from a text prompt using Stability AI. Models: ultra (8 credits, best quality), core (3 credits, fast), sd3.5-large (6.5 credits), sd3.5-large-turbo (4 credits), sd3.5-medium (3.5 credits).',
         inputSchema: {
             prompt: z.string().min(1).max(10000).describe('Text description of the desired image'),
@@ -161,6 +162,7 @@ server.registerTool(
 server.registerTool(
     'image_to_image',
     {
+        annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
         description: 'Generate a new image from a text prompt using an existing image as the starting point. Uses SD 3.5 models.',
         inputSchema: {
             prompt: z.string().min(1).max(10000).describe('Text description of the desired output'),
@@ -203,6 +205,7 @@ server.registerTool(
 server.registerTool(
     'inpaint',
     {
+        annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
         description: 'Fill in or replace specified areas of an image using a mask. White mask pixels = areas to replace, black = preserve. 5 credits.',
         inputSchema: {
             prompt: z.string().min(1).max(10000).describe('What you want to see in the masked area'),
@@ -242,6 +245,7 @@ server.registerTool(
 server.registerTool(
     'outpaint',
     {
+        annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
         description: 'Extend an image by adding content in any direction (left, right, up, down). 4 credits.',
         inputSchema: {
             image_path: z.string().describe('Path to the source image'),
@@ -289,6 +293,7 @@ server.registerTool(
 server.registerTool(
     'erase',
     {
+        annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
         description: 'Remove unwanted objects from an image using a mask. White mask pixels indicate areas to erase. 5 credits.',
         inputSchema: {
             image_path: z.string().describe('Path to the source image'),
@@ -322,6 +327,7 @@ server.registerTool(
 server.registerTool(
     'search_and_replace',
     {
+        annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
         description: 'Automatically find an object in an image and replace it with something else. No mask needed. 5 credits.',
         inputSchema: {
             image_path: z.string().describe('Path to the source image'),
@@ -361,6 +367,7 @@ server.registerTool(
 server.registerTool(
     'search_and_recolor',
     {
+        annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
         description: 'Find an object in an image and change its color. 5 credits.',
         inputSchema: {
             image_path: z.string().describe('Path to the source image'),
@@ -400,6 +407,7 @@ server.registerTool(
 server.registerTool(
     'remove_background',
     {
+        annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
         description: 'Remove the background from an image. Output is always PNG or WebP (supports transparency). 5 credits.',
         inputSchema: {
             image_path: z.string().describe('Path to the source image'),
@@ -429,6 +437,7 @@ server.registerTool(
 server.registerTool(
     'upscale_image',
     {
+        annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
         description: 'Upscale an image by 4x using the fast upscaler (~1 second). 2 credits.',
         inputSchema: {
             image_path: z.string().describe('Path to the image to upscale (32-1536px per side)'),
@@ -458,6 +467,7 @@ server.registerTool(
 server.registerTool(
     'control_sketch',
     {
+        annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
         description: 'Generate a refined image from a sketch or use contour lines from an image. 5 credits.',
         inputSchema: {
             image_path: z.string().describe('Path to the sketch or image'),
@@ -497,6 +507,7 @@ server.registerTool(
 server.registerTool(
     'control_structure',
     {
+        annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
         description: 'Generate an image that maintains the structure/layout of a reference image. Great for recreating scenes. 5 credits.',
         inputSchema: {
             image_path: z.string().describe('Path to the structure reference image'),
