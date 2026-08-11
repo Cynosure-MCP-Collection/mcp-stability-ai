@@ -105,7 +105,7 @@ const server = new McpServer({
     version: '1.0.0',
     title: 'Stability AI',
     description: 'AI image generation, editing, and upscaling via the Stability AI API.',
-    icons: [{ src: 'https://raw.githubusercontent.com/andreasjhagen/Cynosure-MCPs/main/mcp-stability-ai/icon.png', mimeType: 'image/png' }],
+    icons: [{ src: 'https://unpkg.com/@cynosure-mcp/stability-ai@1.0.4/icon.png', mimeType: 'image/png' }],
 });
 
 // ── Tool: generate_image ───────────────────────────────────────────────────────

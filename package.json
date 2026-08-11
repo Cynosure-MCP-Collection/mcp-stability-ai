@@ -1,7 +1,7 @@
 {
   "name": "@cynosure-mcp/stability-ai",
   "mcpName": "io.github.andreasjhagen/stability-ai",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "MCP server for Stability AI image generation, editing, and upscaling",
   "type": "module",
   "main": "dist/index.js",
