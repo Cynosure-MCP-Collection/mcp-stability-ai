@@ -37,5 +37,13 @@
     "image-generation",
     "text-to-image",
     "ai"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cynosure-MCP-Collection/mcp-stability-ai.git"
+  },
+  "homepage": "https://github.com/Cynosure-MCP-Collection/mcp-stability-ai#readme",
+  "bugs": {
+    "url": "https://github.com/Cynosure-MCP-Collection/mcp-stability-ai/issues"
+  }
 }
